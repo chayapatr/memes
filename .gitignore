@@ -1,3 +1,4 @@
 config.json
 fetched.csv
 fetched/
+.DS_Store

@@ -1,4 +1,5 @@
 # https://medium.com/@dennisndungu68/text-classification-using-k-means-33bea24e4a94
+# https://towardsdatascience.com/clustering-sentence-embeddings-to-identify-intents-in-short-text-48d22d3bf02e
 
 # prepare dataset
 import numpy as np
