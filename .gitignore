@@ -1,4 +1,7 @@
 config.json
 fetched.csv
 fetched/
+ant/
+dump/
 .DS_Store
+*.csv
