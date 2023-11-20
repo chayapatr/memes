@@ -27,17 +27,16 @@ la = pd.read_csv('fetched.csv')
 # 
 # print(stemmed[0:5])
 
-from sklearn.feature_extraction.text import CountVectorizer
-cv = CountVectorizer()
-x = cv.fit_transform(stemmed)
+# from sklearn.feature_extraction.text import CountVectorizer
+# cv = CountVectorizer()
+# x = cv.fit_transform(stemmed)
 
 # K-means clustering
 from sklearn.cluster import KMeans
-wcss = []
 
 for i in range(1, rng):
     kmean = KMeans(n_clusters=i, init='k-means++', max_iter=300, n_init=10, random_state=0, verbose=True)
-    kmean.fit(x)
+    kmean.fit(em)
     wcss.append(kmean.inertia_)
 
 import matplotlib.pyplot as plt
