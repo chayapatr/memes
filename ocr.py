@@ -1,4 +1,6 @@
-import easyocr
-reader = easyocr.Reader(['en'])
-result = reader.readtext('t3_17q6v92.jpg')
-print(result)
+from memeocr import MemeOCR
+
+ocr = MemeOCR()
+txt = ocr.recognize('./meme.jpeg')
+txt = ocr.recognize('./meme2.jpg')
+print(txt)
