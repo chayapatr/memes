@@ -3,5 +3,7 @@ fetched.csv
 fetched/
 ant/
 dump/
+csv/
+imgs/
 .DS_Store
 *.csv

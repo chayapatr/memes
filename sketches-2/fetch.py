@@ -25,7 +25,7 @@ for i in range(50):
 
     # Fetch once
     fetched = reddit\
-    .subreddit(cluster).controversial(limit=None, time_filter='week', params={ 'after': after })
+    .subreddit(cluster).top(limit=None, time_filter='month', params={ 'after': after })
 
     if not os.path.isfile(f'{cluster}.csv'):
         with open(f'{cluster}.csv', "w", newline='', encoding="utf-8") as f:

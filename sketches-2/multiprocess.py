@@ -8,10 +8,10 @@ import os
 
 load()
 
-cluster = 'memesopdidnotlike'
+cluster = 'dankmemes'
 reader = easyocr.Reader(['en'])
 fetched = pd.read_csv(f'{cluster}.csv')
-ocrd = open('ocrd-op.csv', "w", newline='', encoding="utf-8")
+ocrd = open('dankmemes-ocr.csv', "w", newline='', encoding="utf-8")
 writer = csv.writer(ocrd)
 writer.writerow(['post_name', 'text'])
 
@@ -43,9 +43,8 @@ def read_meme(path):
 docs = []
 if __name__ == '__main__':
     img_paths = fetched.img_path
-    n = 4
-    print(n)
+    n = 16
     p = Pool(n)
-    for res in p.imap(read_meme, img_paths):
+    for res in p.imap(read_meme, img_paths, chunksize=10):
         writer.writerow([res[0].split(".")[0], res[1], fetched.loc[fetched['img_path'] == res[0]]['post_caption'].item()])
         print("writing", res[0])
